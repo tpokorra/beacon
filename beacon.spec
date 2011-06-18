@@ -1,13 +1,12 @@
 Name:			beacon
 Version:		0.5
-Release:		4%{?dist}
+Release:		5%{?dist}
 Summary:		WYSIWYG editor for docbook xml
 
 Group:			Applications/Editors
 License:		GPLv3+
 URL:			http://fedoraproject.org/wiki/DocBook_Editor
 Source0:		%{name}-%{version}.tar.gz
-Source1:		httpd-beacon.conf
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:		noarch
 Requires:		php, httpd, php-xml, mysql-server, mysql, php-mysql
@@ -30,10 +29,12 @@ https://fedoraproject.org/wiki/DocBook_Editor_Feature.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/beacon
-cp -rp beacon php $RPM_BUILD_ROOT/%{_datadir}/beacon/
-mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/httpd/conf.d/
-cp -p  %{SOURCE1} $RPM_BUILD_ROOT/%{_sysconfdir}/httpd/conf.d/
+make install prefix=$RPM_BUILD_ROOT/usr sysconfdir=$RPM_BUILD_ROOT/etc/
+
+#mkdir -p $RPM_BUILD_ROOT/%{_datadir}/beacon
+#cp -rp beacon php $RPM_BUILD_ROOT/%{_datadir}/beacon/
+#mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/httpd/conf.d/
+#cp -p  httpd-beacon.conf $RPM_BUILD_ROOT/%{_sysconfdir}/httpd/conf.d/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -41,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc docs/* LICENSE README TODO README_DATABASE README.fedora
+%doc docs/* LICENSE README TODO
 %{_datadir}/beacon/*
 %attr(0700,apache,apache)
 
@@ -50,6 +51,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Jun 18 2011 P J P <pj.pandit@yahoo.co.in> 0.5-5
+- Updated source to include upstream bug fixes.
+- included httpd-beacon.conf into the source tarball.
+
 * Tue May 10 2011 Satya Komaragiri <satyak@fedoraproject.org> 0.5-4
 - Added dependency on php-mysql.
 - Made mysql login as default.

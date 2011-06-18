@@ -18,7 +18,15 @@ Linux/Unix systems:
 
  1. Do make install as a root user.
 
+    # tar -xzf beacon-0.5.tar.gz
+    # cd beacon-0.5
     # make install
+
+ 2. Start the Apache HTTP server
+
+    # service httpd start
+
+ 3. Open URL -> http://localhost/beacon/php
 
 
 Beacon Database - MySQL:
@@ -58,7 +66,7 @@ has been done for you :)
 Please follow the instructions above to set up Beacon database.
 
 In addition, if you wish to change the default location where beacon resides,
-please be sure to chage te settings in beacon.conf and also in
+please be sure to change the settings in beacon.conf and also in
 httpd-beacon.conf.
 
 
