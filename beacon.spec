@@ -1,9 +1,9 @@
 Name:			beacon
 Version:		0.5
 Release:		4%{?dist}
-Summary:	WYSIWYG editor for docbook xml
+Summary:		WYSIWYG editor for docbook xml
 
-Group:       Applications/Editors
+Group:			Applications/Editors
 License:		GPLv3+
 URL:			http://fedoraproject.org/wiki/DocBook_Editor
 Source0:		%{name}-%{version}.tar.gz

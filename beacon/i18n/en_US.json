@@ -1,18 +1,11 @@
-// A JSON Object containing all the strings
 {
-    messages: {
-        closeError: "You cannot close this tab!",
-
-        loadingObject: "Loading {name}...",
-
-        hasLoaded: "{name} has loaded...",
-
-        noFileType: "Please enter a file type!",
-
-        noFileName: "Please enter a file name!",
-
-        loadingPluginScripts: "Fetching the scripts required by the plugin. This is a one time task.",
-
-        liveHelp: "Live help! Just chat with the developers at #beacon on freenode!"
+    "messages": {
+        "hasLoaded": "{name} has loaded...",
+        "closeError": "You cannot close this tab!",
+        "noFileType": "Please enter a file type!",
+        "noFileName": "Please enter a file name!",
+        "loadingObject": "Loading {name}...",
+        "loadingPluginScripts": "Fetching the scripts required by the plugin. This is a one time task.",
+        "liveHelp": "Live help! Just chat with the developers at #beacon on freenode!"
     }
 }

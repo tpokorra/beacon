@@ -1,6 +1,81 @@
-Beacon 0.5.01 alpha
-~~~~~~~~~~~~~~~~~~~
 
-Read INSTALL on how to INSTALL.
+Beacon 0.5.01 alpha:
+~~~~~~~~~~~~~~~~~~~~
 
-The User Guide and Developer documents are present in the docs/ folder. Use Beacon to read them. :)
+Beacon is a WYSIWYM based XML editor with an emphasis on clean and sane output.
+It uses a 'fill in the blanks' approach to web-based editing and has a plug-in
+architecture to allow other documentation types to be integrated as well.
+
+The User Guide and Developer documents are present in the docs/ folder.
+Use Beacon to read them. :)
+
+
+INSTALL:
+~~~~~~~~
+
+Linux/Unix systems:
+-------------------
+
+ 1. Do make install as a root user.
+
+    # make install
+
+
+Beacon Database - MySQL:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to get Beacon fully working, however, you need to set up the
+database manually. For this, follow the steps as described below.
+
+ 1. Make sure the mysqld service is running.
+
+    # service mysqld start
+
+ 2. Type mysql on the command line. This should take you to the mysql
+    interpreter.
+
+ 3. Type the following commands to setup database, create a user and
+    give him permissions to access the database.
+
+    mysql> CREATE DATABASE <database-name>;
+
+    mysql> CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+
+    mysql> GRANT ALL PRIVILEGES ON <database>.* TO '<username>'@'localhost';
+
+
+The database name, user name and password are set as 'beacon' by default
+in beacon/php/settings.php. Your real settings should be reflected in that
+file too.
+
+
+Fedora:
+~~~~~~~
+
+If you have installed Beacon from the RPM then cheer up, as most of the work
+has been done for you :)
+
+Please follow the instructions above to set up Beacon database.
+
+In addition, if you wish to change the default location where beacon resides,
+please be sure to chage te settings in beacon.conf and also in
+httpd-beacon.conf.
+
+
+
+Contact:
+~~~~~~~~~
+
+If you think you've found a bug or would like to request a feature please send
+an email to:
+
+    - satya.komaragiri@gmail.com
+    - beacon-dev@beaconeditor.org
+
+OR
+
+File a ticket on: http://trac.beaconeditor.org
+
+OR
+
+Ping us on #beacon on irc.freenode.net
