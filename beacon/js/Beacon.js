@@ -215,7 +215,7 @@ Beacon.prototype.beaconExit = function() {
 Beacon.prototype.refreshDocumentList = function() {
     $("#BeaconDocumentList").html("Fetching...");
 
-    var obj = {
+    obj = {
         action: "getdoclist"
     };
 
@@ -284,6 +284,8 @@ Beacon.prototype.newDoc = function() {
         flag = true,
         id = 0,
         container = "";
+
+    filename = filename.replace(" ", "_");
 
     if (filetype === "-1") {
         $.jGrowl(this.strings.messages["noFileType"]);
@@ -389,7 +391,7 @@ Beacon.prototype.editDoc = function(e) {
 };
 
 Beacon.prototype.initDoc = function(filename, id, action, plugin) {
-    var container = '#' + filename + id;
+    container = '#' + filename + id;
 
     $(this.container).tabs("add", container, filename);
     $(container).addClass('BeaconDocumentTab');

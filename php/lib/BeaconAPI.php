@@ -1,4 +1,4 @@
-<?
+<?php
 /**
 * Beacon - API (PHP)
 *

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?> -->
 <!-- $Id: -->
 
 <!-- ================================================= -->
@@ -115,6 +115,9 @@
 <!-- Following this comment block is an element which points to a -->
 <!-- Document Type Declaration, or DTD, which will inform any capable -->
 <!-- editor program how to treat the XML content. -->
+
+<!--<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.docbook.org/xml/4.4/docbookx.dtd" [ -->
 
 <!-- Here is the meaning of each attribute in the DTD pointer: -->
 <!-- DOCTYPE : This is a DOCTYPE element that points to a DTD. -->

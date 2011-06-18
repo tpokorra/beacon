@@ -1,4 +1,4 @@
-<?
+<?php
 
 class BeaconDocbook {
 
@@ -37,3 +37,5 @@ class BeaconDocbook {
 
 
 return new BeaconDocbook();
+
+?>
