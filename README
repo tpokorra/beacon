@@ -21,6 +21,10 @@ Linux/Unix systems:
     # tar -xzf beacon-0.5.tar.gz
     # cd beacon-0.5
     # make install
+    
+ or on Fedora do
+ 
+    # yum install beacon
 
  2. Start the Apache HTTP server
 
