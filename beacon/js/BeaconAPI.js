@@ -1097,21 +1097,17 @@ var BeaconRichTextEditor = function(o, iframe) {
 
     // Copy over old styles
     this.style = {};
-    this.style.oldBackground = this.node.style.background;
 
     // Set new styles
-    this.node.style.background = "#FFFFCC";
-
-    // Remove the fugly outline
-    this.node.style.outline = "none"
+    this.node.style.outline = "#000000 solid thin";
 
     // Focus the node to set cursor
     this.node.focus();
 };
 
 BeaconRichTextEditor.prototype.restoreNode = function() {
-    // Reset the old background
-    this.node.style.background = this.style.oldBackground;
+    // Reset to no outline
+    this.node.style.outline = "";
 
     // Make it uneditable
     this.node.contentEditable = false;
