@@ -1,4 +1,4 @@
-<?
+<?php
 
 class BeaconGuideXML {
 
@@ -7,8 +7,11 @@ class BeaconGuideXML {
     var $xml2html = "xml/guide2html.xsl";
     var $css_path = "css/guide.css";
 
-    function newdoc($beacon) {
-        $text = file_get_contents($beacon->path . $this->new_template);
+    function newdoc($beacon, $source) {
+
+        $text = $source;
+        if (!$text)
+            $text = file_get_contents($beacon->path . $this->new_template);
 
         $text = $beacon->parser->xslParse($text,
                                           $beacon->path . $this->xml2html);
@@ -38,3 +41,4 @@ class BeaconGuideXML {
 
 return new BeaconGuideXML();
 
+?>

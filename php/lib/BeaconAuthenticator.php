@@ -35,7 +35,7 @@ class BeaconAuth
         {
             if($user['password'] == $password)
             {
-                $this->user_id = $user['id'];
+                $this->user_id = $user['uid'];
                 $this->username = $username;
                 $this->ok = true;
 
@@ -57,7 +57,7 @@ class BeaconAuth
         {
             if($user['password'] == $password)
             {
-                $this->user_id = $user['id'];
+                $this->user_id = $user['uid'];
                 $this->username = $username;
                 $this->ok = true;
                 return true;

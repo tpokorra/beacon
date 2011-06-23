@@ -56,6 +56,7 @@ class BeaconAPI
         // Check which plugin it is
         $plugin = $this->request->payload->plugin;
         $filename = $this->request->payload->filename;
+        $xmlsource = $this->request->payload->xmlsource;
 
         // Get the plugin Object
         $plugin_object = include($this->pluginpath . $plugin . "/php/" . $plugin . ".php");
@@ -66,7 +67,7 @@ class BeaconAPI
         $beacon->parser = new BeaconXSLTransformer();
 
         // Get the HTML
-        $html = $plugin_object->newdoc($beacon);
+        $html = $plugin_object->newdoc($beacon, $xmlsource);
 
         // Get the Source
         $beacon->html = $html;

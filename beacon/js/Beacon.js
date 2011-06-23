@@ -186,7 +186,7 @@ Beacon.prototype.init = function() {
 
             $("#BeaconCreateNewButton").bind("click", this.newDoc.attach(this));
 
-            //$("#BeaconFetchButton").bind("click", this.fetchDoc.attach(this));
+            $("#BeaconFetchButton").bind("click", this.fetchDoc.attach(this));
 
             $(".BeaconEditDocumentButton").bind("click", this.editDoc.attach(this));
             $(".BeaconDeleteDocumentButton").bind("click", this.deleteDoc.attach(this));
@@ -316,7 +316,24 @@ Beacon.prototype.newDoc = function() {
     // To add some randomness to the tab id temporarily
     id = Math.floor(Math.random()*10001);
 
-    this.initDoc(filename, id, "newdoc", this.settings.plugins[filetype]);
+    this.initDoc(filename, id, "newdoc",
+                    this.settings.plugins[filetype], undefined);
+};
+
+
+Beacon.prototype.fetchDoc = function(e) {
+    var furl = $.trim($("#BeaconURLField").val()),
+        fname = $.trim($("#BeaconEditFileName").val()),
+        ftype = $.trim($("#BeaconEditDocType").val());
+
+    $.ajax({url: furl, type: 'GET',
+            success: function(data) {
+                var id = Math.floor(Math.random() * 10001);
+                data = (new XMLSerializer()).serializeToString(data);
+
+                beacon.initDoc(fname, id, "newdoc",
+                                beacon.settings.plugins[ftype], data);
+            } });
 };
 
 
@@ -390,18 +407,20 @@ Beacon.prototype.editDoc = function(e) {
     return false;
 };
 
-Beacon.prototype.initDoc = function(filename, id, action, plugin) {
+Beacon.prototype.initDoc = function(filename, id, action, plugin, source) {
     container = '#' + filename + id;
 
     $(this.container).tabs("add", container, filename);
     $(container).addClass('BeaconDocumentTab');
     $(this.container).tabs('select', container);
 
-    this.showLoading(container, "Please wait while the document is being created...");
+    this.showLoading(container,
+                     "Please wait while the document is being created...");
 
     var o = {
         plugin: plugin,
-        filename: filename
+        filename: filename,
+        xmlsource: source
     };
 
     var data = {
