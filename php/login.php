@@ -82,7 +82,7 @@ if (!$auth->check_session()) {
         if (!$auth->login($username, md5($password))) {
             @session_destroy();
             echo '<h3>Incorrect Login.</h3>';
-            header)('Refresh: 1; url=index.php');
+            header('Refresh: 1; url=index.php');
         } else {
             header("Location: beacon.php");
         }
