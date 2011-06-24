@@ -27,15 +27,16 @@ $beacon_runnable = $beacon_db_instance->init_db($beacon_mysql_hostname,
                                                 $beacon_mysql_password);
 
 if ($beacon_runnable < 0) {
-    echo '<h3>Database Error. <a href="index.php">Go to main page</a> to review the problem.</h3>';
+    header('Location: index.php');
     exit();
 }
 
 $auth = new BeaconAuth($beacon_db_instance);
 
 if (!$auth->check_session()) {
-    echo '<h3>You are not authorized to view this page. <a href="index.php">Login Here.</a></h3>';
     @session_destroy();
+    header('Location: index.php');
+
     exit();
 }
 

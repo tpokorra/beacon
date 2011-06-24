@@ -195,7 +195,7 @@ Beacon.prototype.init = function() {
 
             $("#BeaconLogOut").bind("click", this.logout.attach(this));
 
-            window.onbeforeunload = this.beaconExit.attach(this)
+            // window.onbeforeunload = this.beaconExit.attach(this)
         }.attach(this)
     });
 };
@@ -208,7 +208,6 @@ Beacon.prototype.logout = function() {
 
 Beacon.prototype.beaconExit = function() {
     var str = "You are leaving Beacon. All unsaved documents will be lost.";
-
     return str;
 };
 

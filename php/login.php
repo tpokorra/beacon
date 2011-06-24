@@ -23,16 +23,18 @@ $beacon_runnable = $beacon_db_instance->init_db($beacon_mysql_hostname,
                                                 $beacon_mysql_password);
 
 if ($beacon_runnable < 0) {
-    echo '<h3>Database Error. <a href="index.php">Go to main page</a> to review the problem.</h3>';
     @session_destroy();
+    header("Location: index.php");
+
+    exit();
 }
 
 $auth = new BeaconAuth($beacon_db_instance);
 
 if (!$auth->check_session()) {
     if (!isset($_POST['name1'])) {
-        echo '<h3>You are not authorized to view this page. <a href="index.php">Login Here.</a></h3>';
         @session_destroy();
+        header("Location: index.php");
     } else {
         $username = $_POST['name1'];
         $password = $_POST['password1'];
@@ -78,8 +80,9 @@ if (!$auth->check_session()) {
 
         /* BEGIN: MySQL Login */
         if (!$auth->login($username, md5($password))) {
-            echo '<h3>Incorrect Login. <a href="index.php">Go Back.</a></h3>';
             @session_destroy();
+            echo '<h3>Incorrect Login.</h3>';
+            header)('Refresh: 1; url=index.php');
         } else {
             header("Location: beacon.php");
         }

@@ -1,6 +1,6 @@
 Name:			beacon
 Version:		0.5
-Release:		5%{?dist}
+Release:		6%{?dist}
 Summary:		WYSIWYG editor for docbook xml
 
 Group:			Applications/Editors
@@ -51,6 +51,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jun 24 2011 P J P <pj.pandit@yahoo.co.in> 0.5-6
+- updated to load external files - Bug=704375.
+- redirects to index.php, in case of an error: expired session etc.
+
 * Sat Jun 18 2011 P J P <pj.pandit@yahoo.co.in> 0.5-5
 - Updated source to include upstream bug fixes.
 - included httpd-beacon.conf into the source tarball.
