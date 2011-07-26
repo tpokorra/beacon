@@ -325,14 +325,8 @@ Beacon.prototype.fetchDoc = function(e) {
         fname = $.trim($("#BeaconEditFileName").val()),
         ftype = $.trim($("#BeaconEditDocType").val());
 
-    $.ajax({url: furl, type: 'GET',
-            success: function(data) {
-                var id = Math.floor(Math.random() * 10001);
-                data = (new XMLSerializer()).serializeToString(data);
-
-                beacon.initDoc(fname, id, "newdoc",
-                                beacon.settings.plugins[ftype], data);
-            } });
+    var id = Math.floor(Math.random() * 10001);
+    this.initDoc(fname, id, "fetchdoc", this.settings.plugins[ftype], furl);
 };
 
 

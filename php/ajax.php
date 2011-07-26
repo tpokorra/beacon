@@ -70,6 +70,11 @@ if ($request == '') {
             echo $newdoc;
             break;
 
+        case "fetchdoc":
+            $fetchdoc = $beacon->fetchdoc();
+            echo $fetchdoc;
+            break;
+
         case "savedoc":
             $result = $beacon->savedoc();
             echo $result;

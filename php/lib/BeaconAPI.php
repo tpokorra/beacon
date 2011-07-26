@@ -262,7 +262,13 @@ class BeaconAPI
     }
 
     function fetchdoc() {
+        $xmlurl = $this->request->payload->xmlsource;
 
+        // downlaod content from the given URL.
+        $xmlsource = file_get_contents($xmlurl);
+        $this->request->payload->xmlsource = $xmlsource;
+
+        return $this->newdoc();
     }
 
     function deletedoc() {
