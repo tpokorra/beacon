@@ -164,7 +164,6 @@ Beacon.prototype.init = function() {
         type: "POST",
         success: function(html) {
             $(this.container).html(html);
-
             $(this.container).tabs();
 
             $("#BeaconMenu").accordion({autoHeight: false});

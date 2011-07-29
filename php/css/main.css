@@ -1,17 +1,16 @@
 body {
     font: 9pt "Trebuchet MS", sans-serif;
-    background: #999;
+    background: #E8EEFA;
+    
 }
 
 #container {
     margin: 21px auto;
-    width: 960px;
-    border: 1px solid #a6c9e2;
-    background: #fff;
+    background: #ffffff;
+    border: 1px solid #C3D9FF
 }
 
-#createUserDialog {
-}
+
 
 .actions {
     margin: 10px;
@@ -19,7 +18,7 @@ body {
 
 
 .BeaconContent {
-    font: 9pt "Trebuchet MS", sans-serif;
+    font: 11pt "Trebuchet MS", sans-serif;
     overflow: auto;
 }
 
@@ -34,6 +33,13 @@ div#users-contain table td, div#users-contain table th { border: 1px solid #eee;
 .ui-button { outline: 0; margin:0; padding: .4em 1em .5em; text-decoration:none;  !important; cursor:pointer; position: relative; text-align: center; }
 .ui-dialog .ui-state-highlight, .ui-dialog .ui-state-error { padding: .3em;  }
 
-#loginDialog,#createUserDialog,#installDialog{
+#loginDialog,#createUserDialog{
+    background: #E8EEFA;
+    border: 1px solid #C3D9FF;
+    font: 9pt "Trebuchet MS", sans-serif;
+}
+
+#installDialog{
     display:none;
+        font: 9pt "Trebuchet MS", sans-serif;
 }

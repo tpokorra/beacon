@@ -32,12 +32,13 @@ if ($beacon_runnable < 0) {
 $auth = new BeaconAuth($beacon_db_instance);
 
 if (!$auth->check_session()) {
-    if (!isset($_POST['name1'])) {
+    if (!isset($_POST['name'])) {
+        echo '<h3>You are not authorized to view this page. <a href="index.php">Login Here.</a></h3>';
         @session_destroy();
         header("Location: index.php");
     } else {
-        $username = $_POST['name1'];
-        $password = $_POST['password1'];
+        $username = $_POST['name'];
+        $password = $_POST['password'];
 
 
         /* BEGIN: Code for external auth */
@@ -92,3 +93,5 @@ if (!$auth->check_session()) {
 } else {
     header("Location: beacon.php");
 }
+
+?>

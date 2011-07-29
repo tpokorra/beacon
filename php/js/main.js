@@ -57,7 +57,7 @@ $(function() {
 
     }
 
-    $("#createUserDialog").dialog({
+ /*   $("#createUserDialog").dialog({
         autoOpen: false,
         height: 300,
         modal: true,
@@ -79,6 +79,8 @@ $(function() {
             allFields.val('').removeClass('ui-state-error');
         }
     });
+    
+    */
 
 
     function updateTips1(t) {
@@ -107,7 +109,7 @@ $(function() {
 
     }
 
-    $("#loginDialog").dialog({
+ /*   $("#loginDialog").dialog({
         autoOpen: false,
         height: 300,
         modal: true,
@@ -130,6 +132,8 @@ $(function() {
             allFields1.val('').removeClass('ui-state-error');
         }
     });
+    
+*/
 
 
     function updateTips2(t) {
