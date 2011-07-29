@@ -1,6 +1,6 @@
 Name:			beacon
 Version:		0.5
-Release:		6%{?dist}
+Release:		7%{?dist}
 Summary:		WYSIWYG editor for docbook xml
 
 Group:			Applications/Editors
@@ -51,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Jul 27 2011 P J P <pj.pandit@yahoo.co.in> 0.5.7
+- changed to load documents from internet URLs.
+
 * Fri Jun 24 2011 P J P <pj.pandit@yahoo.co.in> 0.5-6
 - updated to load external files - Bug=704375.
 - redirects to index.php, in case of an error: expired session etc.
