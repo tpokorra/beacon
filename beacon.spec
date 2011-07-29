@@ -1,6 +1,6 @@
 Name:			beacon
 Version:		0.5
-Release:		7%{?dist}
+Release:		8%{?dist}
 Summary:		WYSIWYG editor for docbook xml
 
 Group:			Applications/Editors
@@ -51,6 +51,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+
+* Fri Jul 29 2011 Satya Komaragiri <satyak@fedoraproject.org> 0.5-8
+- Merged the login and register popup to main page. (https://github.com/satya/beacon/issues/4
+- Added ability to add new users anytime. (https://github.com/satya/beacon/issues/1)
+
 * Wed Jul 27 2011 P J P <pj.pandit@yahoo.co.in> 0.5.7
 - changed to load documents from internet URLs.
 
