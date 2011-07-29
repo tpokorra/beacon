@@ -96,8 +96,8 @@ $request = json_decode(file_get_contents($beacon_conf_path));
             </div>
 
          
-         <div style="float:right; width:20%; padding-right:20px;">
-              <div id="loginDialog" title="Login" >
+         <div style="float:right; width:20%; padding-right:20px; padding-top:50px; padding-bottom:50px;">
+              <div id="loginDialog" title="Login">
                   <div class = "ui-widget-header ui-corner-all" style="text-align: center;"> <p>Sign In </p></div>
                   <form id="loginForm" action="login.php" method="POST">
                       <fieldset>
@@ -109,9 +109,9 @@ $request = json_decode(file_get_contents($beacon_conf_path));
                       </fieldset>
                   </form>
               </div>
-              <div> <p> <br/><b>New Users</b><br/></p> </div>
+              <div> <p> <br/></p> </div>
               <div id="createUserDialog" title="Create new user">
-                  <div class = "ui-widget-header ui-corner-all" style="text-align: center;"> <p>Register </p></div>
+                  <div class = "ui-widget-header ui-corner-all" style="text-align: center;"> <p>Create New Account</p></div>
                   <form id="registerForm" action="register.php" method="POST">
                      <fieldset>
                           <label for="name">Username</label>
