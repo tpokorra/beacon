@@ -36,6 +36,15 @@ $pages = array(
         "Edit a Document" =>
             "Edit a Document",
 
+	    "Upload a Document" =>
+            "Upload a Document",
+
+        "File:" =>
+            "File:",
+
+        "Upload" =>
+            "Upload",
+
         "Choose where to fetch the document from:" =>
             "Choose where to fetch the document from:",
 

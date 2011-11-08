@@ -93,5 +93,4 @@ if (!$auth->check_session()) {
 } else {
     header("Location: beacon.php");
 }
-
 ?>

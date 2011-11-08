@@ -38,7 +38,7 @@
                     <p>
                         <select id="BeaconNewDocType"></select>
                     </p>
-                    <p><a id="BeaconCreateNewButton" class="BeaconButton ui-corner-all">{Create New!}</a></p>
+                    <p><a id="BeaconCreateNewButton" class="BeaconButton ui-corner-all">{Create New}</a></p>
                 </div>
             </div>
             <h4><a href="#">{Edit a Remote Document}</a></h4>
@@ -63,6 +63,20 @@
                         <br />
                         <img src="{imgpath}/loading.gif" />
                     </p>
+                </div>
+            </div>
+            <h4><a href="#">{Upload a Document}</a></h4>
+            <div class="BeaconAccordionItem">
+                <div id="BeaconNewDocumentMenu">
+                    <form id="TestForm" action="ReadDiskDoc.php" method="POST" enctype="multipart/form-data">
+                        <p>{File:}</p>
+                            <input id="BeaconUploadName" type="file" name="file"/>
+                        <p><br/>{Choose Document Type:}</p>
+                        <p>
+                            <select id="BeaconUploadDocType" name="type"></select>
+                        </p>
+                        <p><input type="submit" id="BeaconUploadButton" class="BeaconButton ui-corner-all" value="Upload" /></p>
+                    </form>
                 </div>
             </div>
         </div>

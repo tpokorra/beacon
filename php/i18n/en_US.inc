@@ -33,8 +33,8 @@ $pages = array(
         "Select one" =>
             "Select one",
 
-        "Create New!" =>
-            "Create New!",
+        "Create New" =>
+            "Create New",
 
         "Edit a Remote Document" =>
             "Edit a Remote Document",
@@ -47,6 +47,15 @@ $pages = array(
 
         "Fetch" =>
             "Fetch",
+
+	"Upload a Document" =>
+            "Upload a Document",
+
+        "File:" =>
+            "File:",
+
+        "Upload" =>
+            "Upload",
 
         "Welcome to Beacon. A WYSIWYG (and much more!) Editor." =>
             "Welcome to Beacon. A WYSIWYG (and much more!) Editor.",

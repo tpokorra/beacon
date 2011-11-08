@@ -172,6 +172,7 @@ Beacon.prototype.init = function() {
                 $("#BeaconConfigPlugins").append("<span>" + this.settings.plugins[i] + " </span>");
                 $("#BeaconNewDocType").append("<option value=\"" + i + "\">" + this.settings.plugins[i] + " </option>");
                 $("#BeaconEditDocType").append("<option value=\"" + i + "\">" + this.settings.plugins[i] + " </option>");
+		$("#BeaconUploadDocType").append("<option value=\"" + i + "\">" + this.settings.plugins[i] + " </option>");
             }
 
             $("#BeaconConfigLanguage").html(this.settings.language);
@@ -188,6 +189,9 @@ Beacon.prototype.init = function() {
             $("#BeaconFetchButton").bind("click", this.fetchDoc.attach(this));
 
             $(".BeaconEditDocumentButton").bind("click", this.editDoc.attach(this));
+
+            // $("#BeaconUploadButton").bind("click", this.uploadDoc.attach(this));
+
             $(".BeaconDeleteDocumentButton").bind("click", this.deleteDoc.attach(this));
 
             $("#BeaconRefreshDocumentList").bind("click", this.refreshDocumentList.attach(this));
@@ -327,6 +331,18 @@ Beacon.prototype.fetchDoc = function(e) {
     var id = Math.floor(Math.random() * 10001);
     this.initDoc(fname, id, "fetchdoc", this.settings.plugins[ftype], furl);
 };
+
+Beacon.prototype.uploadDoc = function(e) {
+    var fname = $.trim($("#BeaconUploadName").val()),
+        ftype = $.trim($("#BeaconUploadDocType").val());
+	$.jGrowl(fname);
+
+    //$.jGrowl(this.strings.messages[$(fname)]);
+
+    var id = Math.floor(Math.random() * 10001);
+    //this.initDoc(fname, id, "fetchdoc", this.settings.plugins[ftype], furl);
+};
+
 
 
 Beacon.prototype.editDoc = function(e) {
