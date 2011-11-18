@@ -83,7 +83,7 @@ var BeaconAPI = function(o, beacon) {
         // Let us attach the events
         $(this.ui["SaveButton"].id).bind("click", this.saveDocument.attach(this));
 
-        window.setInterval(this.autoSave.attach(this), 300000);
+        // window.setInterval(this.autoSave.attach(this), 300000);
 
         // Set the close button
         $(this.ui["CloseButton"].id).bind("click", this.closeDocument.attach(this));
