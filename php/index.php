@@ -47,6 +47,12 @@ switch ($beacon_db_instance->init_db($beacon_mysql_hostname,
         break;
 }
 
+if (!class_exists("XSLTProcessor"))
+{
+	$beacon_error = "Error: You are missing the PHP XSL extension. Please install xsl for php, eg. apt-get install php5-xsl";
+	$beacon_runnable = false;
+}
+
 $request = json_decode(file_get_contents($beacon_conf_path));
 
 ?>
