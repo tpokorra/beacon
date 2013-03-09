@@ -143,11 +143,11 @@ $request = json_decode(file_get_contents($beacon_conf_path));
                     echo '<p><button id="install" class="ui-button ui-state-default ui-corner-all">Install</button></p>';
                 }
             ?>
+	    </div>
         </div>
     </div>
     <script src="../beacon/js/jquery.js" type="text/javascript"></script>
     <script src="../beacon/js/jquery.ui.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </body>
-</html>
 </html>
